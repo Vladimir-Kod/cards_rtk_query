@@ -1,5 +1,4 @@
-import type { Meta } from '@storybook/react'
-import { StoryObj } from '@storybook/react'
+import { StoryObj, Meta } from '@storybook/react'
 
 import { Card } from '@/components/ui/card/card.tsx'
 
@@ -8,8 +7,9 @@ const meta = {
   component: Card,
   tags: ['autodocs'],
   argTypes: {
-    card: {
-      option: ['mainCard'],
+    variant: {
+      options: ['mainCard'],
+      control: { type: 'radio' },
     },
   },
 } satisfies Meta<typeof Card>
@@ -19,6 +19,6 @@ type Story = StoryObj<typeof meta>
 
 export const MainCard: Story = {
   args: {
-    card: 'mainCard',
+    variant: 'mainCard',
   },
 }

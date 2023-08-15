@@ -41,7 +41,7 @@
   }
 }
 
-.primary {
+.primary, .primaryWithIcon {
   @include button;
 
   color: var( --color-light-100);
