@@ -1,4 +1,5 @@
 import { Button } from '@/components/ui/button'
+import { SelectRoot } from '@/components/ui/select/select.tsx'
 
 export function App() {
   return (
@@ -6,6 +7,7 @@ export function App() {
       <Button as={'a'} href={'/home'}>
         Go Home
       </Button>
+      <SelectRoot />
     </div>
   )
 }
