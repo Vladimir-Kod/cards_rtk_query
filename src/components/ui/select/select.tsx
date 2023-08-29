@@ -5,7 +5,7 @@ import { SelectItemProps } from '@radix-ui/react-select'
 
 import s from './select.module.scss'
 
-import { ArrowDown, ArrowUp } from '@/assets/icons'
+import { ArrowDown } from '@/assets/icons'
 
 type Props = {
   disabled?: boolean
@@ -24,9 +24,6 @@ export const SelectRoot = (props: Props) => {
       </div>
       <Select.Portal>
         <Select.Content className={s.SelectContent} position="popper" sideOffset={0}>
-          <Select.ScrollUpButton>
-            <ArrowUp />
-          </Select.ScrollUpButton>
           <Select.Viewport>
             {props.value &&
               props.value.map(el => {
@@ -37,9 +34,6 @@ export const SelectRoot = (props: Props) => {
                 )
               })}
           </Select.Viewport>
-          <Select.ScrollUpButton>
-            <ArrowDown />
-          </Select.ScrollUpButton>
         </Select.Content>
       </Select.Portal>
     </Select.Root>

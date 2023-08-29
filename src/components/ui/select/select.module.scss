@@ -27,12 +27,12 @@
   border: 1px solid var(--color-dark-100);
   border-radius: 2px;
 
-  //&:disabled {
-  //  opacity: 0.3;
-  //}
+  &:disabled {
+    opacity: 0.3;
+  }
 
   &:focus {
-    border: 2px solid var(--color-info-700);
+    border: 1px solid var(--color-info-700);
     border-radius: 2px;
     outline: none;
   }
@@ -51,7 +51,7 @@
 
 .SelectContent {
   float: left;
-  width: 210px;
+  width: 235px;
   max-height: 300px;
   border: 1px solid var(--color-dark-100);
 }
