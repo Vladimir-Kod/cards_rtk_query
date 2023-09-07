@@ -1,22 +1,18 @@
 .headerSelect {
-  width: 210px;
   height: 60px;
-
-  font-size: var(--font-size-s);
-  font-weight: var(--font-weight-regular);
-  line-height: var(--line-height-m);
-  color: var(--color-dark-100)
 }
 
 .trigger {
+  cursor: pointer;
+  user-select: none;
+
   display: flex;
   flex-shrink: 0;
   align-items: center;
   justify-content: space-between;
 
-  width: 210px;
-  height: 36px;
-  padding: 0 12px;
+  width: 100vh;
+  height: 2rem;
 
   font-size: var(--font-size-m);
   font-weight: var(--font-weight-regular);
@@ -26,37 +22,72 @@
   background-color: var(--color-dark-900);
   border: 1px solid var(--color-dark-100);
   border-radius: 2px;
+  outline: 2px solid transparent;
 
   &:disabled {
-    opacity: 0.3;
+    color: var(--color-dark-300) !important;
+    border-color: var(--color-dark-300);
+
+    & svg{
+      opacity: 0.3;
+
+    }
   }
 
-  &:focus {
-    border: 1px solid var(--color-info-700);
+  &:focus-visible {
+    border: 1px solid transparent;
     border-radius: 2px;
-    outline: none;
+    outline: 2px solid var(--color-info-700);
   }
 
   &:hover {
     background-color: var(--color-dark-300);
-    outline: none;
+
   }
+
+}
+
+.label {
+  user-select: none;
+  margin: 1px 0;
+  color: var(--color-dark-100) !important;
+}
+
+.labelDisabled {
+  color: var(--color-dark-300) !important;
+
+}
+
+.ArrowDownIcon {
+  display: flex;
 }
 
 .trigger[data-state='open'] {
   & svg{
-    transform: rotate(180deg)
+    transform: rotate(180deg);
+    transition: transform 0.2s ease-in-out;
+
+  }
+}
+
+.trigger[data-state='closed'] {
+  & svg {
+    transition: transform 0.2s ease-in-out;
   }
 }
 
 .SelectContent {
   float: left;
-  width: 235px;
-  max-height: 300px;
+
+  width: 100vh;
+
+  background-color: var(--color-dark-900);
   border: 1px solid var(--color-dark-100);
+  border-radius: 2px;
 }
 
 .item {
+  cursor: pointer;
   padding-left: 12px ;
 
   &:focus {
@@ -65,7 +96,8 @@
   }
 
   &:hover {
+    color: var(--color-accent-300);
     background-color: var(--color-accent-900);
-      outline: none;
+    outline: none
   }
 }

@@ -2,21 +2,23 @@ import { ComponentPropsWithoutRef, ElementType } from 'react'
 
 import s from './typography.module.scss'
 
+export type TypographySizeType =
+  | 'large'
+  | 'h1'
+  | 'h2'
+  | 'h3'
+  | 'body1'
+  | 'subtitle1'
+  | 'body2'
+  | 'subtitle2'
+  | 'caption'
+  | 'overline'
+  | 'link1'
+  | 'link2'
+
 export type TypographyProps<T extends ElementType = 'p'> = {
   as?: T
-  size?:
-    | 'large'
-    | 'h1'
-    | 'h2'
-    | 'h3'
-    | 'body1'
-    | 'subtitle1'
-    | 'body2'
-    | 'subtitle2'
-    | 'caption'
-    | 'overline'
-    | 'link1'
-    | 'link2'
+  size?: TypographySizeType
   className?: string
 } & ComponentPropsWithoutRef<T>
 

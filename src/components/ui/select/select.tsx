@@ -1,32 +1,48 @@
 import { forwardRef } from 'react'
 
 import * as Select from '@radix-ui/react-select'
-import { SelectItemProps } from '@radix-ui/react-select'
+import { SelectItemProps, SelectProps } from '@radix-ui/react-select'
 
 import s from './select.module.scss'
 
 import { ArrowDown } from '@/assets/icons'
+import { Label } from '@/components/ui/label/label.tsx'
 
-type Props = {
-  disabled?: boolean
-  value?: string[]
-}
+type SelectType = {
+  selectItemValue?: string[]
+  placeHolderValue?: string
+  labelValue: string
+} & SelectProps
 
-export const SelectRoot = (props: Props) => {
+export const SelectRoot = (props: SelectType) => {
+  const { disabled, onValueChange, selectItemValue, placeHolderValue, labelValue } = props
+
+  const changeCurrentValue = (value: string) => {
+    onValueChange?.(value)
+  }
+
   return (
-    <Select.Root>
-      <div className={s.headerSelect}>
-        Select-Box
-        <Select.Trigger disabled={props.disabled} className={s.trigger}>
-          <Select.Value placeholder="Select-Box" />
-          <ArrowDown />
-        </Select.Trigger>
-      </div>
-      <Select.Portal>
-        <Select.Content className={s.SelectContent} position="popper" sideOffset={0}>
+    <div className={s.Root}>
+      <Select.Root onValueChange={changeCurrentValue} disabled={disabled}>
+        <div className={s.headerSelect}>
+          {labelValue && (
+            <Label
+              text={labelValue}
+              size={'body2'}
+              className={disabled ? `${s.label} ${s.labelDisabled}` : s.label}
+            />
+          )}
+          <Select.Trigger className={s.trigger}>
+            <Select.Value placeholder={placeHolderValue} />
+            <Select.Icon className={s.ArrowDownIcon}>
+              <ArrowDown />
+            </Select.Icon>
+          </Select.Trigger>
+        </div>
+        <Select.Content className={s.SelectContent} position="popper" sideOffset={-1}>
           <Select.Viewport>
-            {props.value &&
-              props.value.map(el => {
+            {selectItemValue &&
+              selectItemValue.map(el => {
                 return (
                   <SelectItem key={el} className={s.item} value={el}>
                     {el}
@@ -35,8 +51,8 @@ export const SelectRoot = (props: Props) => {
               })}
           </Select.Viewport>
         </Select.Content>
-      </Select.Portal>
-    </Select.Root>
+      </Select.Root>
+    </div>
   )
 }
 
