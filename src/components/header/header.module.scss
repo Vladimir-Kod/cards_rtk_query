@@ -16,3 +16,17 @@
   width: 156.482px;
   height: 36px;
 }
+
+.avatar {
+  display: flex; /* Добавьте это свойство */
+  align-items: center; /* Выравнивание по вертикали */
+}
+
+.avatar .typography {
+  margin-right: 14px;
+  padding-bottom: 5px; /* Добавьте небольшой отступ снизу для линии */
+  color: var(--color-light-100);
+  border-bottom: 1px dashed var(--color-light-100); /* 1px - толщина линии, dashed - стиль пунктирной линии, #000 - цвет линии */
+
+/* Настройте отступ справа, какой вам нужен */
+}
