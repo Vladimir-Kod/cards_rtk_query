@@ -1,9 +1,3 @@
-@mixin typography-root{
-  margin: 0;
-  padding-right: 15px;
-  padding-left: 5px;
-}
-
 .DropdownMenuContent {
   all: unset;
 
@@ -13,27 +7,11 @@
   flex-direction: column;
 
   box-sizing: unset;
-  padding: 12px 12px 6px;
+  padding: 8px;
 
-  background-color: var(--color-dark-500);
-  border: 1px solid var(--color-dark-100);
-  border-radius: 7px;
-
-
-  &:focus-visible {;
-    outline: none;
-  }
-}
-
-.header{
-  display: flex;
-  align-items: center;
-  padding-bottom: 8px/* Vertically center items */
-}
-
-.item{
-  display: flex;
-  align-items: center; /* Vertically center items */
+  background-color: var(--color-dark-700);
+  border: 1px solid var(--color-dark-300);
+  border-radius: 5px;
 
 
   &:focus-visible {;
@@ -42,46 +20,5 @@
 }
 
 .DropdownMenuArrow{
-  fill: var(--color-dark-500);
-}
-
-.typography{
-  @include typography-root;
-
-  color: var(--color-light-100) !important;
-}
-
-.typographyEmail{
-  @include typography-root;
-
-  color: var(--color-dark-100)!important;
-}
-
-.DropdownMenuSeparator {
-  height: 1px;
-  margin: 5px;
-  background-color: var(--color-dark-100);
-}
-
-.profile{
-  &:focus-visible {;
-    outline: none;
-  }
-}
-
-.button{
-  padding: 8px 4px!important;
-
-  &:focus:enabled{
-    border: 2px solid transparent!important;
-    border-radius: 5rem!important;
-  }
-}
-
-.itemChild {
-  display: inline-flex;
-  flex-shrink: 0;
-  gap: 0.625rem;
-  align-items: center;
-  justify-content: center;
+  fill: var(--color-dark-700);
 }
