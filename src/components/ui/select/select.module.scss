@@ -1,8 +1,14 @@
+.root {
+  all: unset;
+}
+
 .headerSelect {
   height: 60px;
 }
 
 .trigger {
+  all: unset;
+
   cursor: pointer;
   user-select: none;
 
@@ -11,8 +17,9 @@
   align-items: center;
   justify-content: space-between;
 
-  width: 100vh;
-  height: 2rem;
+  margin: 0;
+  padding: 6px 12px;
+
 
   font-size: var(--font-size-m);
   font-weight: var(--font-weight-regular);
@@ -45,6 +52,20 @@
 
   }
 
+  &[data-state='open'] {
+    & svg{
+      transform: rotate(180deg);
+      transition: transform 0.2s ease-in-out;
+
+    }
+  }
+
+  &[data-state='closed'] {
+    & svg {
+      transition: transform 0.2s ease-in-out;
+    }
+  }
+
 }
 
 .label {
@@ -60,20 +81,6 @@
 
 .ArrowDownIcon {
   display: flex;
-}
-
-.trigger[data-state='open'] {
-  & svg{
-    transform: rotate(180deg);
-    transition: transform 0.2s ease-in-out;
-
-  }
-}
-
-.trigger[data-state='closed'] {
-  & svg {
-    transition: transform 0.2s ease-in-out;
-  }
 }
 
 .SelectContent {
@@ -100,4 +107,10 @@
     background-color: var(--color-accent-900);
     outline: none
   }
+}
+
+.placeholderTypography{
+  margin: 0;
+  padding-right: 126px;
+  color: var(--color-light-100) !important;
 }

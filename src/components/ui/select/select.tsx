@@ -7,6 +7,7 @@ import s from './select.module.scss'
 
 import { ArrowDown } from '@/assets/icons'
 import { Label } from '@/components/ui/label/label.tsx'
+import { Typography } from '@/components/ui/typography'
 
 type SelectType = {
   selectItemValue?: string[]
@@ -22,7 +23,7 @@ export const SelectRoot = (props: SelectType) => {
   }
 
   return (
-    <div className={s.Root}>
+    <div className={s.root}>
       <Select.Root onValueChange={changeCurrentValue} disabled={disabled}>
         <div className={s.headerSelect}>
           {labelValue && (
@@ -33,7 +34,13 @@ export const SelectRoot = (props: SelectType) => {
             />
           )}
           <Select.Trigger className={s.trigger}>
-            <Select.Value placeholder={placeHolderValue} />
+            <Select.Value
+              placeholder={
+                <Typography className={s.placeholderTypography} size={'body1'}>
+                  {placeHolderValue}
+                </Typography>
+              }
+            />
             <Select.Icon className={s.ArrowDownIcon}>
               <ArrowDown />
             </Select.Icon>
