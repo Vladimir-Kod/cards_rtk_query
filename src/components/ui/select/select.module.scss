@@ -1,3 +1,8 @@
+@mixin typography-root {
+  margin: 0;
+  padding-right: 126px;
+}
+
 .root {
   all: unset;
 }
@@ -17,6 +22,8 @@
   align-items: center;
   justify-content: space-between;
 
+  box-sizing: border-box;
+  width: 100vh;
   margin: 0;
   padding: 6px 12px;
 
@@ -37,7 +44,6 @@
 
     & svg{
       opacity: 0.3;
-
     }
   }
 
@@ -47,7 +53,7 @@
     outline: 2px solid var(--color-info-700);
   }
 
-  &:hover {
+  &:hover:not(:disabled) {
     background-color: var(--color-dark-300);
 
   }
@@ -86,6 +92,7 @@
 .SelectContent {
   float: left;
 
+  box-sizing: border-box;
   width: 100vh;
 
   background-color: var(--color-dark-900);
@@ -95,9 +102,10 @@
 
 .item {
   cursor: pointer;
-  padding-left: 12px ;
+  padding-left: 12px;
 
   &:focus {
+    color: var(--color-accent-300);
     background-color: var(--color-accent-900);
     outline: none;
   }
@@ -110,7 +118,14 @@
 }
 
 .placeholderTypography{
-  margin: 0;
-  padding-right: 126px;
+@include typography-root;
+
   color: var(--color-light-100) !important;
+
+}
+
+.disabledTypography{
+@include typography-root;
+
+  color: var(--color-dark-300) !important
 }

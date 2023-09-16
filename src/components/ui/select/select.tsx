@@ -36,7 +36,10 @@ export const SelectRoot = (props: SelectType) => {
           <Select.Trigger className={s.trigger}>
             <Select.Value
               placeholder={
-                <Typography className={s.placeholderTypography} size={'body1'}>
+                <Typography
+                  className={disabled ? s.disabledTypography : s.placeholderTypography}
+                  size={'body1'}
+                >
                   {placeHolderValue}
                 </Typography>
               }

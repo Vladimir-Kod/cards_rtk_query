@@ -14,7 +14,9 @@
   }
 
   &:focus-visible {
-    outline: 2px solid var(--color-info-700);
+    background-color: var(--color-accent-700) !important;
+    border-color: var(--color-accent-700) !important;
+    outline: 2px solid transparent !important;
   }
 
   &:hover:not(:disabled) {
@@ -44,18 +46,25 @@
   }
 }
 
+@mixin typography-root {
+  user-select: none;
+  margin: 0;
+  padding: 6px 24px;
+}
+
 .root {
   all: unset;
 }
 
 .label {
+  user-select: none;
   margin: 0 0 7px;
   color: var(--color-light-900) !important
 }
 
   .typographyTrigger {
-    margin: 0;
-    padding: 6px 24px;
+    @include typography-root;
+
     color: var(--color-light-100) !important;
 
     &:disabled {
@@ -68,7 +77,9 @@
   }
 
 .disabled {
-    color: var(--color-dark-300)!important;
+  @include typography-root;
+
+  color: var(--color-dark-300)!important;
   }
 
   .firstTab {
