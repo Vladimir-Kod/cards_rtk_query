@@ -5,6 +5,7 @@
 
 .root {
   all: unset;
+  display: flex;
 }
 
 .headerSelect {
@@ -22,8 +23,10 @@
   align-items: center;
   justify-content: space-between;
 
-  box-sizing: border-box;
-  width: 100vh;
+  //box-sizing: border-box;
+
+  //width: 100vh;
+  min-width: 300px;
   margin: 0;
   padding: 6px 12px;
 
@@ -92,8 +95,9 @@
 .SelectContent {
   float: left;
 
-  box-sizing: border-box;
-  width: 100vh;
+  //box-sizing: border-box;
+  width: 100%;
+  min-width: 100%;
 
   background-color: var(--color-dark-900);
   border: 1px solid var(--color-dark-100);
@@ -102,6 +106,7 @@
 
 .item {
   cursor: pointer;
+  width: 100%;
   padding-left: 12px;
 
   &:focus {
