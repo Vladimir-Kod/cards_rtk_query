@@ -49,7 +49,8 @@ export const SelectRoot = (props: SelectType) => {
             </Select.Icon>
           </Select.Trigger>
         </div>
-        <Select.Content className={s.SelectContent} position="popper" sideOffset={-1}>
+        <Select.Content className={s.SelectContent} position="popper" sideOffset={-4}>
+          <div className={s.d}></div>
           <Select.Viewport className={s.SelectContent}>
             {selectItemValue &&
               selectItemValue.map(el => {

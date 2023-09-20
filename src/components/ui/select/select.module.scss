@@ -6,6 +6,7 @@
 .root {
   all: unset;
   display: flex;
+  width: 100%;
 }
 
 .headerSelect {
@@ -23,12 +24,10 @@
   align-items: center;
   justify-content: space-between;
 
-  //box-sizing: border-box;
-
-  //width: 100vh;
-  min-width: 300px;
+  box-sizing: border-box;
+  width: 100%;
   margin: 0;
-  padding: 6px 12px;
+  padding: 0.44rem 0.75rem;
 
 
   font-size: var(--font-size-m);
@@ -94,20 +93,20 @@
 
 .SelectContent {
   float: left;
+  overflow: hidden;
 
-  //box-sizing: border-box;
-  width: 100%;
-  min-width: 100%;
+  width: var(--radix-select-trigger-width);
 
   background-color: var(--color-dark-900);
   border: 1px solid var(--color-dark-100);
   border-radius: 2px;
+  box-shadow: none;
 }
 
 .item {
   cursor: pointer;
   width: 100%;
-  padding-left: 12px;
+  padding: 0.44rem 0.75rem;
 
   &:focus {
     color: var(--color-accent-300);
@@ -125,6 +124,7 @@
 .placeholderTypography{
 @include typography-root;
 
+  padding-right: 6.25rem;
   color: var(--color-light-100) !important;
 
 }
